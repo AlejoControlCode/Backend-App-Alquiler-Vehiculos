@@ -18,9 +18,10 @@ const PORT = process.env.PORT || 3001;
 
 // space for routes
 
-APP.use('/api/Clientes', require('./Routes/ClientesRoutes'));
-// APP.use('/api/Vehicles', require('./Routes/VehiclesRoutes'));
+APP.use('/api/Clientes', require('./Routes/ClientesRoutes'));   
+APP.use('/api/Vehicles', require('./Routes/VehiclesRoutes'));
 // APP.use('/api/Rents', require('./Routes/RentsRoutes'));
+APP.use('/api/Tecnomecanica', require('./Routes/TecnomecanicaRoutes'));
 
 
 
