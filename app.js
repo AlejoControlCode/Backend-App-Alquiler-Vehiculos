@@ -1,3 +1,10 @@
+/**
+ * app.js
+ * Punto de entrada de la aplicación Express.
+ * - Configura middlewares
+ * - Registra rutas
+ * - Inicializa la base de datos y arranca el servidor
+ */
 const express = require('express');
 require('dotenv').config();
 const { AsyncModels } = require('./Shared/models/Index');
@@ -20,7 +27,7 @@ const PORT = process.env.PORT || 3001;
 
 APP.use('/api/Clientes', require('./Routes/ClientesRoutes'));   
 APP.use('/api/Vehicles', require('./Routes/VehiclesRoutes'));
-// APP.use('/api/Rents', require('./Routes/RentsRoutes'));
+APP.use('/api/Rents', require('./Routes/RentsRoutes'));
 APP.use('/api/Tecnomecanica', require('./Routes/TecnomecanicaRoutes'));
 
 

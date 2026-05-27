@@ -1,6 +1,12 @@
+
 const VEHICLE = require('../Shared/models/Vehicle');
 
+/**
+ * VehiclesController
+ * CRUD para vehículos: agregar, editar, listar y eliminar.
+ */
 
+// Agrega un vehículo nuevo
 const AddVehicle = async (req, res) => {
     try {
         const {
@@ -15,11 +21,13 @@ const AddVehicle = async (req, res) => {
 
         } = req.body;
 
+        // Validación básica
         if (!IDplate || !brand || !model) {
             return res.status(400).json({ error: 'All fields are required' });
         }
 
 
+        // Verificar existencia por PK (placa)
         const existingVehicle = await VEHICLE.findByPk(IDplate);
         if (existingVehicle) {
             return res.status(409).json({
@@ -28,6 +36,7 @@ const AddVehicle = async (req, res) => {
         }
 
 
+        // Crear vehículo
         const newVehicle = await VEHICLE.create({
             IDplate,
             brand,
@@ -47,6 +56,7 @@ const AddVehicle = async (req, res) => {
 }
 
 
+// Obtiene todos los vehículos
 const getVehicles = async (req, res) => {
     try {
         const vehicles = await VEHICLE.findAll();
@@ -58,6 +68,7 @@ const getVehicles = async (req, res) => {
     }
 }
 
+// Edita un vehículo por su PK (placa)
 const EditVehicle = async (req, res) => {
     try {
         const { id } = req.params;
@@ -92,6 +103,7 @@ const EditVehicle = async (req, res) => {
 }
 
 
+// Elimina un vehículo por su PK (placa)
 const DeleteVehicle = async (req, res) => {
     try {
         const { id } = req.params;

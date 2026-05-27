@@ -1,3 +1,12 @@
+/**
+ * Cliente model
+ * Representa a los clientes registrados en el sistema.
+ * Campos principales:
+ * - `identification`: PK (número de identificación)
+ * - `name`, `lastName`: nombre y apellido del cliente
+ * - `phone`, `address`, `email`: datos de contacto
+ * - `registerDate`: fecha de registro
+ */
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../Config/database');
 

@@ -1,3 +1,10 @@
+/**
+ * Rutas para vehículos
+ * - POST /AgregarVehiculo -> crear vehículo
+ * - PUT /EditarVehiculo/:id -> editar vehículo
+ * - GET /ObtenerVehiculos -> listar vehículos
+ * - DELETE /EliminarVehiculos/:id -> eliminar vehículo
+ */
 const Express = require('express');
 const { AddVehicle, EditVehicle, getVehicles, DeleteVehicle } = require('../Controllers/VehiclesController');
 

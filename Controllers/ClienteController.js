@@ -1,7 +1,11 @@
 const CLIENTE = require('../Shared/models/Cliente');
 
+/**
+ * ClienteController
+ * Contiene las funciones para CRUD de clientes.
+ */
 
-
+// Agrega un nuevo cliente
 const AddClient = async (req, res) => {
     try {
         const {
@@ -15,11 +19,13 @@ const AddClient = async (req, res) => {
         } = req.body;
 
 
+        // Validación básica: campos obligatorios
         if (!identification || !name || !lastName) {
             return res.status(400).json({ error: 'All fields are required' });
         }
 
 
+        // Verificar si el cliente ya existe
         const existingClient = await CLIENTE.findByPk(identification);
         if (existingClient) {
             return res.status(409).json({
@@ -29,6 +35,7 @@ const AddClient = async (req, res) => {
 
 
 
+        // Crear registro en la base de datos
         const newClient = await CLIENTE.create({
             identification,
             name,
@@ -54,6 +61,7 @@ const AddClient = async (req, res) => {
 }
 
 
+// Edita un cliente existente por su identificación (PK)
 const EditClient = async (req, res) => {
     try {
         const { id } = req.params;
@@ -66,12 +74,14 @@ const EditClient = async (req, res) => {
             email,
         } = req.body;
 
+        // Buscar el cliente
         const client = await CLIENTE.findByPk(id);
 
         if (!client) {
             return res.status(404).json({ error: 'Client not found' });
         }
 
+        // Actualizar campos enviados, mantener valores previos si no vienen
         await client.update({
             name: name ?? client.name,
             lastName: lastName ?? client.lastName,
@@ -93,6 +103,7 @@ const EditClient = async (req, res) => {
 }
 
 
+// Obtiene todos los clientes
 const getClients = async (req, res) => {
     try {
 
@@ -112,6 +123,7 @@ const getClients = async (req, res) => {
 }
 
 
+// Elimina un cliente por PK
 const DeleteClient = async (req, res) => {
 
     try{

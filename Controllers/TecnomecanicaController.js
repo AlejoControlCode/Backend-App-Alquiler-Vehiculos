@@ -1,5 +1,11 @@
 const TECNOMECANICA = require('../Shared/models/Tecnomecanica');
 
+/**
+ * TecnomecanicaController
+ * Añade y consulta solicitudes de tecnomecánica para vehículos.
+ */
+
+// Agrega una nueva solicitud de tecnomecanica
 const AddTecnomecanica = async (req, res) => {
     try {
         const {
@@ -11,6 +17,7 @@ const AddTecnomecanica = async (req, res) => {
             estado
         } = req.body;
 
+        // Validación básica de campos requeridos
         if (!ordenServicio || !plate_fk || !estado) {
             return res.status(400).json({
                 message: 'All fields are required'
@@ -26,6 +33,7 @@ const AddTecnomecanica = async (req, res) => {
             });
         }
 
+        // Crear registro
         const newTecnomecanica = await TECNOMECANICA.create({
             ordenServicio,
             fechaSolicitud,
@@ -48,6 +56,7 @@ const AddTecnomecanica = async (req, res) => {
 }
 
 
+// Obtiene la tecnomecánica por placa (si existe)
 const getTecnomecanica = async (req, res) => {
     try {
         const { plate_fk } = req.params;

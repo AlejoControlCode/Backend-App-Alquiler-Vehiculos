@@ -1,3 +1,12 @@
+/**
+ * Tecnomecanica model
+ * Registra las solicitudes de tecnomecánica/mantenimiento para vehículos.
+ * Campos principales:
+ * - `idTecnomecanica`: PK auto incremental
+ * - `ordenServicio`: número de orden de servicio
+ * - `plate_fk`: FK a la placa del vehículo
+ * - `nombreTecnico`, `fechaMantenimiento`, `estado`: detalles del mantenimiento
+ */
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../Config/database');
 

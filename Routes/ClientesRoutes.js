@@ -1,3 +1,10 @@
+/**
+ * Rutas para clientes
+ * - POST /AgregarCliente -> crear cliente
+ * - PUT /EditarCliente/:id -> editar cliente
+ * - GET /ObtenerClientes -> listar clientes
+ * - DELETE /EliminarClientes/:id -> eliminar cliente
+ */
 const Express = require('express');
 const { AddClient, EditClient, getClients, DeleteClient } = require('../Controllers/ClienteController');
 
