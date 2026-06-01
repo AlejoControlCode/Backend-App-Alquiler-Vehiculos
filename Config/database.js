@@ -1,10 +1,23 @@
+<<<<<<< HEAD
 // Import Sequelize class to manage the database connection
+=======
+/**
+ * database.js
+ * Configuración de Sequelize para la conexión a la base de datos.
+ * - Exporta `sequelize` para ser usado por los modelos.
+ * - Exporta `testConexion()` para verificar que la conexión funciona.
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const { Sequelize } = require('sequelize');
 
 // Load environment variables from the .env file
 require('dotenv').config();
 
+<<<<<<< HEAD
 // Create a Sequelize instance using database credentials
+=======
+// Crear la instancia de Sequelize usando variables de entorno
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const sequelize = new Sequelize(
     process.env.DB_NAME,      // Database name
     process.env.DB_USER,      // Database username
@@ -27,7 +40,11 @@ const sequelize = new Sequelize(
     }
 );
 
+<<<<<<< HEAD
 // Function to test the database connection
+=======
+// Función para probar la conexión y mostrar un mensaje en consola
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const testConexion = async () => {
     try {
         // Attempt to authenticate the connection

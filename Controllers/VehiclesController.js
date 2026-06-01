@@ -1,7 +1,19 @@
+<<<<<<< HEAD
 // Import the Vehicle model used to interact with the vehicles table
 const VEHICLE = require('../Shared/models/Vehicle');
 
 // Create a new vehicle record
+=======
+
+const VEHICLE = require('../Shared/models/Vehicle');
+
+/**
+ * VehiclesController
+ * CRUD para vehículos: agregar, editar, listar y eliminar.
+ */
+
+// Agrega un vehículo nuevo
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const AddVehicle = async (req, res) => {
     try {
 
@@ -16,14 +28,23 @@ const AddVehicle = async (req, res) => {
             registerDate
         } = req.body;
 
+<<<<<<< HEAD
         // Validate required fields
+=======
+        // Validación básica
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
         if (!IDplate || !brand || !model) {
             return res.status(400).json({
                 error: 'All fields are required'
             });
         }
 
+<<<<<<< HEAD
         // Check whether a vehicle with the same plate already exists
+=======
+
+        // Verificar existencia por PK (placa)
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
         const existingVehicle = await VEHICLE.findByPk(IDplate);
 
         if (existingVehicle) {
@@ -32,7 +53,12 @@ const AddVehicle = async (req, res) => {
             });
         }
 
+<<<<<<< HEAD
         // Create a new vehicle record in the database
+=======
+
+        // Crear vehículo
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
         const newVehicle = await VEHICLE.create({
             IDplate,
             brand,
@@ -61,7 +87,11 @@ const AddVehicle = async (req, res) => {
     }
 };
 
+<<<<<<< HEAD
 // Retrieve all registered vehicles
+=======
+// Obtiene todos los vehículos
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const getVehicles = async (req, res) => {
     try {
 
@@ -83,7 +113,11 @@ const getVehicles = async (req, res) => {
     }
 };
 
+<<<<<<< HEAD
 // Update an existing vehicle
+=======
+// Edita un vehículo por su PK (placa)
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const EditVehicle = async (req, res) => {
     try {
 
@@ -138,7 +172,11 @@ const EditVehicle = async (req, res) => {
     }
 };
 
+<<<<<<< HEAD
 // Delete a vehicle record
+=======
+// Elimina un vehículo por su PK (placa)
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const DeleteVehicle = async (req, res) => {
     try {
 

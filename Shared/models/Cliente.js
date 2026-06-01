@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 // Import Sequelize data types
+=======
+/**
+ * Cliente model
+ * Representa a los clientes registrados en el sistema.
+ * Campos principales:
+ * - `identification`: PK (número de identificación)
+ * - `name`, `lastName`: nombre y apellido del cliente
+ * - `phone`, `address`, `email`: datos de contacto
+ * - `registerDate`: fecha de registro
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const { DataTypes } = require('sequelize');
 
 // Import the configured Sequelize instance

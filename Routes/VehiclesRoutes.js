@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 // Import the Express framework
+=======
+/**
+ * Rutas para vehículos
+ * - POST /AgregarVehiculo -> crear vehículo
+ * - PUT /EditarVehiculo/:id -> editar vehículo
+ * - GET /ObtenerVehiculos -> listar vehículos
+ * - DELETE /EliminarVehiculos/:id -> eliminar vehículo
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const Express = require('express');
 
 // Import vehicle controller functions

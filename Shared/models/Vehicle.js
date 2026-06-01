@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 // Import Sequelize data types
+=======
+/**
+ * Vehicle model
+ * Representa un vehículo disponible para renta.
+ * Campos principales:
+ * - `IDplate`: placa (PK)
+ * - `brand`, `model`: marca y modelo
+ * - `mileage`: kilometraje
+ * - `state`: estado del vehículo (disponible, en mantenimiento, etc.)
+ * - `rental_fee`: tarifa de renta
+ * - `registerDate`: fecha de registro
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const { DataTypes } = require('sequelize');
 
 // Import the configured Sequelize instance

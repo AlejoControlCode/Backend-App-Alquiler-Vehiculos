@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 // Import Express framework
+=======
+/**
+ * app.js
+ * Punto de entrada de la aplicación Express.
+ * - Configura middlewares
+ * - Registra rutas
+ * - Inicializa la base de datos y arranca el servidor
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const express = require('express');
 
 // Load environment variables from the .env file
@@ -36,11 +46,15 @@ APP.use('/api/Clientes', require('./Routes/ClientesRoutes'));
 
 // Vehicle management routes
 APP.use('/api/Vehicles', require('./Routes/VehiclesRoutes'));
+<<<<<<< HEAD
 
 // Rental management routes (currently disabled)
 // APP.use('/api/Rents', require('./Routes/RentsRoutes'));
 
 // Vehicle inspection and maintenance routes
+=======
+APP.use('/api/Rents', require('./Routes/RentsRoutes'));
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 APP.use('/api/Tecnomecanica', require('./Routes/TecnomecanicaRoutes'));
 
 // Database Initialization

@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 // Import Sequelize data types
+=======
+/**
+ * Rent model
+ * Representa una renta de vehículo.
+ * Campos principales:
+ * - `id_rent`: PK auto incremental
+ * - `identification_fk`: FK al cliente (clientes.identification)
+ * - `plate_fk`: FK al vehículo (vehicles.IDplate)
+ * - `start_date`, `end_date`: fechas de inicio y fin de la renta
+ * - `total_price`: precio total de la renta
+ * - `rental_status`: estado (active|finished|cancelled)
+ * - `client_comment`, `company_comment`, `employee_comment`: comentarios opcionales
+ */
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const { DataTypes } = require('sequelize');
 
 // Import the configured Sequelize instance
@@ -33,6 +48,7 @@ const Rent = sequelize.define('Rent', {
       key: 'IDplate'
     }
   },
+<<<<<<< HEAD
 
   // Rental start date
   start_date: {
@@ -67,6 +83,15 @@ const Rent = sequelize.define('Rent', {
   company_comment: {
     type: DataTypes.TEXT
   }
+=======
+  start_date: {type: DataTypes.DATE,allowNull: false},
+  end_date: {type: DataTypes.DATE,allowNull: false},
+  total_price: {type: DataTypes.FLOAT,allowNull: false},
+  rental_status: {type: DataTypes.ENUM('active', 'finished', 'cancelled'),allowNull: false},
+  client_comment: {type: DataTypes.TEXT},
+  company_comment: {type: DataTypes.TEXT},
+  employee_comment: {type: DataTypes.TEXT}
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 
 }, {
 

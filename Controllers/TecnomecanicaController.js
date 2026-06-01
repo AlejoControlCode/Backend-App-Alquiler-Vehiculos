@@ -1,7 +1,16 @@
 // Import the Tecnomecanica model used to interact with the inspection records table
 const TECNOMECANICA = require('../Shared/models/Tecnomecanica');
 
+<<<<<<< HEAD
 // Create a new tecnomecanica record
+=======
+/**
+ * TecnomecanicaController
+ * Añade y consulta solicitudes de tecnomecánica para vehículos.
+ */
+
+// Agrega una nueva solicitud de tecnomecanica
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const AddTecnomecanica = async (req, res) => {
     try {
 
@@ -15,7 +24,11 @@ const AddTecnomecanica = async (req, res) => {
             estado
         } = req.body;
 
+<<<<<<< HEAD
         // Validate required fields
+=======
+        // Validación básica de campos requeridos
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
         if (!ordenServicio || !plate_fk || !estado) {
             return res.status(400).json({
                 message: 'All fields are required'
@@ -33,7 +46,11 @@ const AddTecnomecanica = async (req, res) => {
             });
         }
 
+<<<<<<< HEAD
         // Create a new tecnomecanica record in the database
+=======
+        // Crear registro
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
         const newTecnomecanica = await TECNOMECANICA.create({
             ordenServicio,
             fechaSolicitud,
@@ -61,7 +78,11 @@ const AddTecnomecanica = async (req, res) => {
     }
 };
 
+<<<<<<< HEAD
 // Retrieve tecnomecanica information for a specific vehicle
+=======
+// Obtiene la tecnomecánica por placa (si existe)
+>>>>>>> f7f798ebc409c327e789301b216bd4b7bf3b44e3
 const getTecnomecanica = async (req, res) => {
     try {
 
